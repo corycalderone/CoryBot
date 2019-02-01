@@ -42,6 +42,9 @@ def get_posts(username):
     print("All done for now.")
 
 
-for item in reddit.inbox.unread(limit=None):
-    if 'update' in item.body:
-        get_posts(item.author.name)
+def go():
+    for item in reddit.inbox.unread(limit=None):
+        if 'update' in item.body:
+            get_posts(item.author.name)
+
+go()
